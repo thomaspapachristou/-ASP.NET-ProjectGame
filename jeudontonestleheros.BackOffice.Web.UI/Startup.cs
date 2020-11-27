@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using jeudontonestleheros.Core.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace jeudontonestleheros.BackOffice.Web.UI
 {
@@ -23,6 +25,9 @@ namespace jeudontonestleheros.BackOffice.Web.UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            string connectionString = this.Configuration.GetConnectionString("DefaultContext");
+            services.AddDbContext<DefaultContext>(options => options.UseSqlServer(connectionString), ServiceLifetime.Scoped);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
