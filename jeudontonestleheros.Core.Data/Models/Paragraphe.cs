@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace jeudontonestleheros.Core.Data.Models
@@ -31,6 +33,8 @@ namespace jeudontonestleheros.Core.Data.Models
         /// <summary>
         /// Question du paragraphe
         /// </summary>
+
+        [NotMapped]
         public Question MaQuestion { get; set; }
 
         #endregion

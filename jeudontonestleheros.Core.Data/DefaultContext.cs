@@ -17,6 +17,7 @@ namespace jeudontonestleheros.Core.Data
         #region Properties
 
         public DbSet<Aventure> Aventures { get; set; }
+        public DbSet<Paragraphe> Paragraphes { get; set; }
 
         #endregion
     }
