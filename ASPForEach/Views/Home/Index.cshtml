@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    @foreach (var i in @ViewBag.monTableau) // ou this.ViewBag.monTableau
+    {
+        <a href="#" class="card border m-2 text-center" style="width: 18rem;">
+            <div class="card-body">
+                @i : Mon texte xD
+            </div>
+        </a>
+    }
+</div>

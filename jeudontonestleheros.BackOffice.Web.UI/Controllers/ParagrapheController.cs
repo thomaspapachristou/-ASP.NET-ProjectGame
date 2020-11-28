@@ -41,6 +41,7 @@ namespace jeudontonestleheros.BackOffice.Web.UI.Controllers
         {
             this._context.Paragraphes.Add(paragraphe);
             this._context.SaveChanges();
+
             return this.View();
         }
 

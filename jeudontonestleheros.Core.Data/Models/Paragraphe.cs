@@ -6,6 +6,7 @@ using System.Text;
 
 namespace jeudontonestleheros.Core.Data.Models
 {
+    [Table("Paragraphe")]
     public class Paragraphe
     {
         #region Propriétés

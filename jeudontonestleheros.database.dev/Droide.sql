@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Table1]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Matricule] VARCHAR(250) NOT NULL
+)
