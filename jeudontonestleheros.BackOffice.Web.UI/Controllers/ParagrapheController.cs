@@ -49,7 +49,7 @@ namespace jeudontonestleheros.BackOffice.Web.UI.Controllers
         {
             // id (est l'int qu'on rajoute dans l'URL) =/= ID est l'instance du modèle (qu'on essaye de get/post) /!\
             Paragraphe paragraphe = null;
-            // paragraphe = _maListe.First(item => item.ID == id);
+            paragraphe = this._context.Paragraphes.First(item => item.Id == id);
 
             return this.View(paragraphe);
 
@@ -58,6 +58,18 @@ namespace jeudontonestleheros.BackOffice.Web.UI.Controllers
         [HttpPost]
         public ActionResult Edit(Paragraphe paragraphe)
         {
+            // [this._context.Paragraphes.Update(paragraphe);] --> Modification de la totalité de Paragraphe
+
+            // Si on veut modifier un paramètre en particulier d'une colonne, on écrit comme ci-dessous
+            // On attache l'objet pour le suivre/tracker par EF 
+            this._context.Attach<Paragraphe>(paragraphe);
+
+            // On définie lesquels attribut qui seront modifiés sur le client.
+            this._context.Entry(paragraphe).Property(item => item.Titre).IsModified = true;
+            this._context.Entry(paragraphe).Property(item => item.Description).IsModified = true;
+
+            this._context.SaveChanges();
+
             return this.View();
         }
         #endregion

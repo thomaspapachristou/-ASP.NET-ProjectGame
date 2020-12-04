@@ -21,8 +21,19 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        
+                        @*Première méthode pour gérer les routes la méthode ancienne :
+                            - <li>@Html.ActionLink("MesAventures", actionName : "Index", ControllerName: "Aventure")</li>
+                            
+                            Seconde méthode : 
+                            @{ 
+                                var url = Url.Action(action : "Index",  controller: "Aventure");    
+                            }
+                            <li> <a href="@url"> Mes Aventures</li>
+                            *@
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Aventure" asp-action="Index">Mes Aventures</a>
                         </li>
                     </ul>
                 </div>
