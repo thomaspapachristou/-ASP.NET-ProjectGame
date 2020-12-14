@@ -24,6 +24,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+
+                        <!-- Ajout d'un bouton qui dirige automatiquement à la modification ou l'ajout des paragraphes des aventures-->
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Paragraphe" asp-action="Index">Mes Aventures</a>
+                        </li>
+                            <!-- Ajout du système Login/Register avec Identity en scaffold-->
+                            <partial name="_LoginPartial"/>
                     </ul>
                 </div>
             </div>
