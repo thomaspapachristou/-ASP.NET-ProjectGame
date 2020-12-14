@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using jeudontonestleheros.Core.Data.Models; // Le dossier models pour les DbSet avec Entity
+using jeudontonestleheros.Core.Data.Models; // Le dossier models pour les DbSet avec EF
 using Microsoft.EntityFrameworkCore;
 
 namespace jeudontonestleheros.Core.Data
